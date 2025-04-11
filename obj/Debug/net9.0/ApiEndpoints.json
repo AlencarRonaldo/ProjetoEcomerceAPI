@@ -1,5 +1,15 @@
 [
   {
+    "ContainingType": "EcommerceAPI.Controlles.ClienteController",
+    "Method": "ListarCliente",
+    "RelativePath": "api/Cliente",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "EcommerceAPI.Controlles.ProdutoController",
     "Method": "ListarProdutos",
     "RelativePath": "api/Produto",

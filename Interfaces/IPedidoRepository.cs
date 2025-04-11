@@ -9,7 +9,7 @@ namespace EcommerceAPI.Interfaces
 
         // Recebe um identificador, e 
         // retorna o prduto correspondente
-        Cliente BuscarPorId(int id);
+        Pedido BuscarPorId(int id);
 
 
         // C - Create (Cadastro    

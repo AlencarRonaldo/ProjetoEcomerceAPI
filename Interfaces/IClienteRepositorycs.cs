@@ -2,7 +2,7 @@
 
 namespace EcommerceAPI.Interfaces
 {
-    public interface IClienteRepositorycs
+    public interface IClienteRepository
     {
         //R - Read (Leitura)
         List<Cliente> ListarTodos();
