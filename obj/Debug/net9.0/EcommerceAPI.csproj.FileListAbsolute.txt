@@ -162,3 +162,8 @@ C:\Users\FIC\Documents\ProjetoEcomerce\EcommerceAPI\EcommerceAPI\bin\Debug\net9.
 C:\Users\FIC\Documents\ProjetoEcomerce\EcommerceAPI\EcommerceAPI\obj\Debug\net9.0\EcommerceAPI.csproj.AssemblyReference.cache
 C:\Users\FIC\Documents\ProjetoEcomerce\EcommerceAPI\EcommerceAPI\obj\Debug\net9.0\Ecommerc.C58B2BB1.Up2Date
 C:\Users\FIC\Documents\ProjetoEcomerce\EcommerceAPI\EcommerceAPI\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\FIC\Documents\ProjetoEcomerce\EcommerceAPI\EcommerceAPI\bin\Debug\net9.0\Microsoft.OpenApi.dll
+C:\Users\FIC\Documents\ProjetoEcomerce\EcommerceAPI\EcommerceAPI\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\FIC\Documents\ProjetoEcomerce\EcommerceAPI\EcommerceAPI\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\FIC\Documents\ProjetoEcomerce\EcommerceAPI\EcommerceAPI\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\FIC\Documents\ProjetoEcomerce\EcommerceAPI\EcommerceAPI\obj\Debug\net9.0\EcommerceAPI.MvcApplicationPartsAssemblyInfo.cs

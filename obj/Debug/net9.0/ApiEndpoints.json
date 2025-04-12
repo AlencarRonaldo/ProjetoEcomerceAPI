@@ -10,6 +10,36 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "EcommerceAPI.Controlles.ItensPedidoController",
+    "Method": "ListarItensPedido",
+    "RelativePath": "api/ItensPedido",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EcommerceAPI.Controlles.PagamentoController",
+    "Method": "ListarCliente",
+    "RelativePath": "api/Pagamento",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EcommerceAPI.Controlles.PedidoController",
+    "Method": "ListarCliente",
+    "RelativePath": "api/Pedido",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "EcommerceAPI.Controlles.ProdutoController",
     "Method": "ListarProdutos",
     "RelativePath": "api/Produto",
@@ -17,6 +47,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EcommerceAPI.Controlles.ProdutoController",
+    "Method": "CadastrarProduto",
+    "RelativePath": "api/Produto",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "prod",
+        "Type": "EcommerceAPI.Models.Produto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   }
 ]

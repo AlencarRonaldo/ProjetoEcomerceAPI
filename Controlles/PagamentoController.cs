@@ -8,22 +8,22 @@ namespace EcommerceAPI.Controlles
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ItensPedidoController : ControllerBase
+    public class PagamentoController : ControllerBase
     {
         private readonly EcommerceContext _context;
-        public IItensPedidoRepository _itensPedidoRepository;
+        private IPagamentoRepository _pagamentoRepository;
 
-        public ItensPedidoController(EcommerceContext context)
+        public PagamentoController(EcommerceContext context)
         {
             _context = context;
-            _itensPedidoRepository = new ItensPedidoRepository(_context);
+            _pagamentoRepository = new PagamentoRepository(_context);
         }
 
         // GET
         [HttpGet]
-        public IActionResult ListarItensPedido()
+        public IActionResult ListarCliente()
         {
-            return Ok(_itensPedidoRepository.ListarTodos());
+            return Ok(_pagamentoRepository.ListarTodos());
         }
     }
 }
