@@ -22,12 +22,33 @@ namespace EcommerceAPI.Repositories
         }
         public void Atualuzar(int id, Produto produto)
         {
-            throw new NotImplementedException();
+            //Encontro o produto desejo
+            Produto produtoEncontrado = _context.Produtos.Find(id);
+
+            // CAso nao encontre o produto lanco um erro
+            if(produtoEncontrado == null)
+            {
+                throw new Exception();
+            }
+
+            produtoEncontrado.Nome = produto.Nome;
+            produtoEncontrado.Descricao = produto.Descricao;
+            produtoEncontrado.Preco = produto.Preco;
+            produtoEncontrado.Categoria = produto.Categoria;
+            produtoEncontrado.Imagem = produto.Imagem;
+            produtoEncontrado.EstoqueDisponivel = produto.EstoqueDisponivel;
+
         }
 
         public Produto BuscarPorId(int id)
         {
-            throw new NotImplementedException();
+            //ToList() - Pega varios
+            //FirstorDefault - Traz o primeiro que encontrar
+            //FINCAOLAMBIDA
+            //_context.Produtos - acessa a tabela de contexto
+            //FirstOrDefault - peque o primeiro que encontrar 
+            //p.Idproduto == id - Para cada produto p 
+            return _context.Produtos.FirstOrDefault(p => p.Idproduto == id);
         }
 
         public void Cadastrar(Produto produto)
@@ -38,7 +59,20 @@ namespace EcommerceAPI.Repositories
 
         public void Deletar(int id)
         {
-            throw new NotImplementedException();
+            //1- Econtrar o que eu quero excluir
+            // Find - Procura pela chave primaria
+            Produto produtoEncontrado = _context.Produtos.Find(id);
+
+            if(produtoEncontrado == null)
+            {
+                throw new Exception();
+            }
+
+            //Caso encontre o produto renovo ele
+            _context.Produtos.Remove(produtoEncontrado);
+
+            //Salvo as alteracos no bnco de dados
+            _context.SaveChanges();
         }
 
         public List<Produto> ListarTodos()
