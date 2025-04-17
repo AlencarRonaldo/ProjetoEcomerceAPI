@@ -1,5 +1,6 @@
 ﻿using EcommerceAPI.Context;
 using EcommerceAPI.Interfaces;
+using EcommerceAPI.Models;
 using EcommerceAPI.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -25,5 +26,9 @@ namespace EcommerceAPI.Controlles
         {
             return Ok(_clienteRepository.ListarTodos());
         }
+
+        //POST
+        [HttpPost]
+        public IActionResult CadastrarCliente(Cliente cliente);
     }
 }

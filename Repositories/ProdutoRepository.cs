@@ -38,6 +38,8 @@ namespace EcommerceAPI.Repositories
             produtoEncontrado.Imagem = produto.Imagem;
             produtoEncontrado.EstoqueDisponivel = produto.EstoqueDisponivel;
 
+            _context.SaveChanges();
+
         }
 
         public Produto BuscarPorId(int id)

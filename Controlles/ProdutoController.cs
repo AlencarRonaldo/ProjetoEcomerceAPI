@@ -75,6 +75,7 @@ namespace EcommerceAPI.Controlles
             }
         }
 
+
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {
