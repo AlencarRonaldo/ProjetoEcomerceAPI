@@ -29,6 +29,12 @@ namespace EcommerceAPI.Controlles
 
         //POST
         [HttpPost]
-        public IActionResult CadastrarCliente(Cliente cliente);
+
+        public IActionResult CadastrarCliente(Cliente cliente) 
+        {
+            _clienteRepository.Cadastrar(cliente);
+                return Created();
+        }
+        
     }
 }

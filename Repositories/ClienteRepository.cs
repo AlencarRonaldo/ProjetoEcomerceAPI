@@ -32,9 +32,9 @@ namespace EcommerceAPI.Repositories
             _context.SaveChanges();
         }
 
-        public Cliente BuscarPOremailSenha(string email, string senha)
+        public Cliente BuscarPorEmailSenha(string email, string senha)
         {
-            throw new NotImplementedException();
+            return _context.Clientes.FirstOrDefault();
         }
 
         public Cliente BuscarPorId(int id)

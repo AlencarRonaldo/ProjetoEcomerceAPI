@@ -34,9 +34,11 @@ public partial class EcommerceContext : DbContext
     {
         modelBuilder.Entity<Cliente>(entity =>
         {
-            entity.HasKey(e => e.IdCliente).HasName("PK__Cliente__D5946642ABCF4F1A");
+            entity.HasKey(e => e.IdCliente).HasName("PK__Cliente__D594664285F856F3");
 
             entity.ToTable("Cliente");
+
+            entity.HasIndex(e => e.Email, "UQ__Cliente__A9D10534DC68E3CD").IsUnique();
 
             entity.Property(e => e.Email)
                 .HasMaxLength(100)
@@ -47,6 +49,9 @@ public partial class EcommerceContext : DbContext
             entity.Property(e => e.NomeCompleto)
                 .HasMaxLength(150)
                 .IsUnicode(false);
+            entity.Property(e => e.Senha)
+                .HasMaxLength(255)
+                .IsUnicode(false);
             entity.Property(e => e.Telefone)
                 .HasMaxLength(255)
                 .IsUnicode(false);
@@ -54,22 +59,24 @@ public partial class EcommerceContext : DbContext
 
         modelBuilder.Entity<ItensPedido>(entity =>
         {
-            entity.HasKey(e => e.IdItemPedido).HasName("PK__ItensPed__F77088BAAD2AFF4F");
+            entity.HasKey(e => e.IdItemPedido).HasName("PK__ItensPed__F77088BABD59584A");
 
             entity.ToTable("ItensPedido");
 
             entity.HasOne(d => d.IdPedidoNavigation).WithMany(p => p.ItensPedidos)
                 .HasForeignKey(d => d.IdPedido)
-                .HasConstraintName("FK__ItensPedi__IdPed__797309D9");
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__ItensPedi__IdPed__208CD6FA");
 
             entity.HasOne(d => d.IdProdutoNavigation).WithMany(p => p.ItensPedidos)
                 .HasForeignKey(d => d.IdProduto)
-                .HasConstraintName("FK__ItensPedi__IdPro__7A672E12");
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__ItensPedi__IdPro__2180FB33");
         });
 
         modelBuilder.Entity<Pagamento>(entity =>
         {
-            entity.HasKey(e => e.IdPagamento).HasName("PK__Pagament__D474651E004126CD");
+            entity.HasKey(e => e.IdPagamento).HasName("PK__Pagament__D474651E1431670B");
 
             entity.ToTable("Pagamento");
 
@@ -83,12 +90,13 @@ public partial class EcommerceContext : DbContext
 
             entity.HasOne(d => d.IdPedidoNavigation).WithMany(p => p.Pagamentos)
                 .HasForeignKey(d => d.IdPedido)
-                .HasConstraintName("FK__Pagamento__IdPed__74AE54BC");
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Pagamento__IdPed__1BC821DD");
         });
 
         modelBuilder.Entity<Pedido>(entity =>
         {
-            entity.HasKey(e => e.IdPedido).HasName("PK__Pedido__9D335DC3380F9C05");
+            entity.HasKey(e => e.IdPedido).HasName("PK__Pedido__9D335DC38794D13D");
 
             entity.ToTable("Pedido");
 
@@ -99,12 +107,13 @@ public partial class EcommerceContext : DbContext
 
             entity.HasOne(d => d.IdClienteNavigation).WithMany(p => p.Pedidos)
                 .HasForeignKey(d => d.IdCliente)
-                .HasConstraintName("FK__Pedido__IdClient__71D1E811");
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Pedido__IdClient__18EBB532");
         });
 
         modelBuilder.Entity<Produto>(entity =>
         {
-            entity.HasKey(e => e.Idproduto).HasName("PK__Produto__C714793A83BCAE01");
+            entity.HasKey(e => e.Idproduto).HasName("PK__Produto__C714793A8F69EA83");
 
             entity.ToTable("Produto");
 

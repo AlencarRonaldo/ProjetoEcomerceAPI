@@ -15,22 +15,53 @@ namespace EcommerceAPI.Repositories
 
         public void Atualuzar(int id, Pagamento pagamento)
         {
-            throw new NotImplementedException();
+          
+            Pagamento PagamentoEncontrado = _context.Pagamentos.Find(id);
+
+            if (PagamentoEncontrado == null)
+            {
+                throw new Exception();
+            }
+
+           pagamentoEncontrado.IdPagamento = pagamento.IdPagamento;
+            pagamentoEncontrado.FormaPagamento = pagamento.FormaPagamento;
+            pagamentoEncontrado.Telefone = cliente.Telefone;
+           pagamentoEncontrado.Endereco = cliente.Endereco;
+           
+
+            _context.SaveChanges();
         }
 
         public Pagamento BuscarPorId(int id)
         {
-            throw new NotImplementedException();
+            return _context.Pagamentos.FirstOrDefault(p => p.IdPagamento == id);
+       
         }
 
         public void Cadastrar(Pagamento pagamento)
         {
-            throw new NotImplementedException();
+            
+            _context.Pagamentos.Add(pagamento);
+
+            _context.SaveChanges();
         }
 
         public void Deletar(int id)
         {
-            throw new NotImplementedException();
+            //1- Econtrar o que eu quero excluir
+            // Find - Procura pela chave primaria
+            Pagamento pagamentoEncontrado = _context.Pagamentos.Find(id);
+
+            if (pagamentoEncontrado == null)
+            {
+                throw new Exception();
+            }
+
+            //Caso encontre o produto renovo ele
+            _context.Pagamentos.Remove(pagamentoEncontrado);
+
+            //Salvo as alteracos no bnco de dados
+            _context.SaveChanges();
         }
 
         public List<Pagamento> ListarTodos()
