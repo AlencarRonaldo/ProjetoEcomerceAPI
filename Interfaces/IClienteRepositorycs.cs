@@ -25,5 +25,7 @@ namespace EcommerceAPI.Interfaces
         // recebe o identificador de quem quer excluir
 
         void Deletar(int id);
+        List<Cliente> BuscarClientePorNome(string nome);
+
     }
 }

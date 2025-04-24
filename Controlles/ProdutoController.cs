@@ -1,4 +1,5 @@
 ﻿using EcommerceAPI.Context;
+using EcommerceAPI.DTO;
 using EcommerceAPI.Interfaces;
 using EcommerceAPI.Models;
 using EcommerceAPI.Repositories;
@@ -35,7 +36,7 @@ namespace EcommerceAPI.Controlles
         public IActionResult CadastrarProduto(Produto prod)
         {
             // 1- colocar produto no banco de dados
-            _produtoRepository.Cadastrar(prod);
+            _produtoRepository.CadastrarProdutoDto(prod);
 
             return Created();
         }
@@ -59,7 +60,7 @@ namespace EcommerceAPI.Controlles
 
         [HttpPut("{id}")]
 
-        public IActionResult Editar(int id, Produto prod)
+        public IActionResult Editar(int id, CadastrarProdutoDto prod)
         {
             //tratativa de erros
             try

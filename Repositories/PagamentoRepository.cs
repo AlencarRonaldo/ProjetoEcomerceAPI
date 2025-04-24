@@ -7,6 +7,7 @@ namespace EcommerceAPI.Repositories
     public class PagamentoRepository : IPagamentoRepository
     {
         private EcommerceContext _context;
+        private object pagamentoEncontrado;
 
         public PagamentoRepository(EcommerceContext context)
         {
@@ -16,17 +17,17 @@ namespace EcommerceAPI.Repositories
         public void Atualuzar(int id, Pagamento pagamento)
         {
           
-            Pagamento PagamentoEncontrado = _context.Pagamentos.Find(id);
+            Pagamento pagamentoEncontrado = _context.Pagamentos.Find(id);
 
-            if (PagamentoEncontrado == null)
+            if (pagamentoEncontrado == null)
             {
                 throw new Exception();
             }
 
-           pagamentoEncontrado.IdPagamento = pagamento.IdPagamento;
+            pagamentoEncontrado.IdPagamento = pagamento.IdPagamento;
             pagamentoEncontrado.FormaPagamento = pagamento.FormaPagamento;
-            pagamentoEncontrado.Telefone = cliente.Telefone;
-           pagamentoEncontrado.Endereco = cliente.Endereco;
+            pagamentoEncontrado.IdPedido = pagamento.IdPedido;
+            pagamentoEncontrado.Status = pagamento.Status;
            
 
             _context.SaveChanges();

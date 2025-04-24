@@ -32,9 +32,22 @@ namespace EcommerceAPI.Repositories
             _context.SaveChanges();
         }
 
+        public List<Cliente> BuscarClientePorNome(string nome)
+        {
+            // where - tras todos que atendem uma condicao
+            var listaClientes = _context.Clientes.Where(c => c.NomeCompleto == nome).ToList();
+
+            return listaClientes;
+        }
+
         public Cliente BuscarPorEmailSenha(string email, string senha)
         {
             return _context.Clientes.FirstOrDefault();
+        }
+
+        public Cliente BuscarPOremailSenha(string email, string senha)
+        {
+            throw new NotImplementedException();
         }
 
         public Cliente BuscarPorId(int id)
@@ -63,7 +76,8 @@ namespace EcommerceAPI.Repositories
 
         public List<Cliente> ListarTodos()
         {
-            return _context.Clientes.ToList(); 
+            return _context.Clientes.OrderBy(c => c.NomeCompleto)
+                .ToList(); 
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using EcommerceAPI.Models;
+﻿using EcommerceAPI.DTO;
+using EcommerceAPI.Models;
 
 namespace EcommerceAPI.Interfaces
 {
@@ -14,16 +15,17 @@ namespace EcommerceAPI.Interfaces
 
         // C - Create (Cadastro    
 
-        void Cadastrar(Produto prodututo);
+        void Cadastrar(CadastrarProdutoDto prodututo);
 
 
         // U -UDADTE (atualixacao)
         //Recebe o identificador para encontrar o Produto e recebe o produto
-        void Atualuzar(int id, Produto produto);
+        void Atualuzar(int id,  CadastrarProdutoDto produto);
 
         // D  - Delete (Delete)
         // recebe o identificador de quem quer excluir
 
         void Deletar(int id);
+        void CadastrarProdutoDto(Produto prod);
     }
 }

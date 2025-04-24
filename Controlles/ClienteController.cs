@@ -19,8 +19,16 @@ namespace EcommerceAPI.Controlles
             _context = context;
             _clienteRepository = new ClienteRepository(_context);
         }
+        [HttpGet("/buscar{nome}")]
+p            return Ok(_clienteRepository.BuscarClientePorNome(nome));
+        }
 
-        // GET
+        [HttpGet("{id}")]
+        public IActionResult BuscarPorId(int id)
+        {
+            return Ok(_clienteRepository.BuscarPorId(id));
+        }
+
         [HttpGet]
         public IActionResult ListarCliente()
         {
